@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apricity Brand Kit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(180deg, #0a1628 0%, #0d1117 50%, #1a3a3a 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 30px;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-align: center;
+            color: #f0d78c;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #4a6572;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+        }
+
+        .accordion {
+            margin: 20px 0;
+        }
+
+        .accordion-item {
+            background: rgba(26, 58, 58, 0.15);
+            border: 1px solid #2c3e50;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: #4a6572;
+        }
+
+        .accordion-header {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(13, 17, 23, 0.4);
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .accordion-header:hover {
+            background: rgba(42, 62, 80, 0.3);
+        }
+
+        .accordion-title {
+            font-size: 1.5em;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: #d4a03c;
+            text-transform: uppercase;
+        }
+
+        .accordion-icon {
+            font-size: 1.5em;
+            color: #d4a03c;
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-content-inner {
+            padding: 30px 25px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            color: #b8c5d0;
+        }
+
+        strong {
+            color: #f0d78c;
+            font-weight: 600;
+        }
+
+        em {
+            color: #e8a628;
+            font-style: italic;
+        }
+
+        .highlight-box {
+            background: rgba(42, 62, 80, 0.3);
+            border-left: 4px solid #d4a03c;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #e8a628;
+            margin-bottom: 0;
+        }
+
+        table {
+            width: 100%;
+            margin: 25px 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(26, 58, 58, 0.2);
+        }
+
+        th {
+            background: #2c3e50;
+            color: #d4a03c;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85em;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #2c3e50;
+            color: #b8c5d0;
+            font-size: 0.95em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(74, 101, 114, 0.1);
+        }
+
+        h3 {
+            font-size: 1.3em;
+            font-weight: 400;
+            color: #c9a227;
+            margin: 30px 0 15px 0;
+        }
+
+        h4 {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: #e8a628;
+            margin: 25px 0 12px 0;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .color-swatch {
+            padding: 35px 15px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .color-code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8em;
+            opacity: 0.8;
+        }
+
+        .manifesto {
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.8), rgba(26, 58, 58, 0.4));
+            padding: 40px;
+            margin: 25px 0;
+            border: 1px solid #2c3e50;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .manifesto p {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #e0e0e0;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #b8c5d0;
+        }
+
+        ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #d4a03c;
+            font-weight: bold;
+        }
+
+        .tagline-large {
+            font-size: 2.2em;
+            text-align: center;
+            color: #f0d78c;
+            margin: 40px 0;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 30px rgba(240, 215, 140, 0.3);
+        }
+
+        .prompt-box {
+            background: rgba(13, 17, 23, 0.6);
+            border: 1px solid #3d5a5a;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #c9a227;
+        }
+
+        .version {
+            text-align: center;
+            color: #4a6572;
+            font-size: 0.9em;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+                letter-spacing: 0.2em;
+            }
+            
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .accordion-title {
+                font-size: 1.2em;
+            }
+            
+            .tagline-large {
+                font-size: 1.6em;
+            }
+
+            .accordion-header {
+                padding: 15px 20px;
+            }
+
+            .accordion-content-inner {
+                padding: 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Apricity</h1>
+        <div class="subtitle">Brand Kit</div>
+
+        <div class="accordion">
+            <!-- The Name -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">The Name</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>There's a word from 1623 that almost no one uses anymore.</p>
+                        <div class="highlight-box">
+                            <p><strong>Apricity.</strong> The warmth of the sun in winter.</p>
+                        </div>
+                        <p>That moment when you're freezing - and then you feel it. Light breaking through. Heat where it shouldn't be. Warmth that finds you anyway.</p>
+                        <p>We build apps for that feeling.</p>
+                        <p>For the couple separated by oceans who light a candle at the same moment. For the pair stuck in routine who tear open an adventure and go. For the person who knows these years are short and wants to hold onto every sound, every quirk, every moment of this life they share.</p>
+                        <p>Cold fades. Warmth stays.</p>
+                        <p>And when warmth hits right, it doesn't ripple.</p>
+                        <p>It makes waves.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Tagline -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">The Tagline</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <div class="tagline-large">Make waves. Not ripples.</div>
+                        <p>This is our anchor. Our dare. Our demand - not of ourselves, but of the people who use what we build.</p>
+                        <p>Ripples fade. Waves reshape.</p>
+                        <p>We build technology that moves people - apps that create moments worth remembering, connections worth keeping, lives worth living.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Apricity -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Why Apricity</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Apricity is felt. It's about warmth and presence. It's emotional.</p>
+                        <p>Our apps aren't about understanding life more deeply. They're about <em>feeling</em> life more fully. Warmth, not analysis. Presence, not comprehension.</p>
+                        <p>Apricity is the one word that matches what our apps actually do to people.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why "Make Waves. Not Ripples." -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Why "Make Waves. Not Ripples."</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Waves are force. Apricity is warmth.</p>
+                        <p>This brand isn't just one or the other - it's both. We're not making cold, aggressive tech. We're not making soft, forgettable fluff. We're making warmth that moves people.</p>
+                        <div class="highlight-box">
+                            <p><strong>Apricity. Make waves. Not ripples.</strong></p>
+                        </div>
+                        <p>Translation: We bring warmth - and that warmth changes things. It's not passive. It's not decorative. It hits.</p>
+                        <p>The sun in winter doesn't just feel nice. It <em>breaks through</em>. It reaches you when you didn't expect it. That's not a ripple. That's a wave.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tagline System -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Tagline System</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tagline</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Make waves. Not ripples.</strong></td>
+                                    <td>Primary. Logo lockup, business cards, email signatures, app store footer, social media bios, merchandise</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ripples fade. Waves reshape.</strong></td>
+                                    <td>About page opener, investor deck intro, press kit, manifesto header</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ripples touch the surface. Waves move the ocean.</strong></td>
+                                    <td>Brand film closing, keynote/conference moments, print advertising, annual review or milestone posts</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Not a ripple. A wave.</strong></td>
+                                    <td>Social media captions, product launch announcements, quick punchy moments</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We don't do ripples.</strong></td>
+                                    <td>Internal culture (team shirts, Slack channels), confident/edgy campaigns, interviews when asked "what makes you different"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combined Lines -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Combined Lines: Apricity + Waves</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Line</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Warmth that makes waves.</strong></td>
+                                    <td>Core fusion. Soft meets force. Brand in four words. Headlines, hero text.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Warmth breaks through.</strong></td>
+                                    <td>The sun in winter doesn't ask permission. Neither do our apps. Campaigns, social.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Warmth that moves.</strong></td>
+                                    <td>Double meaning: emotionally moving AND creates movement/change. Versatile.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Still waters stay cold.</strong></td>
+                                    <td>A challenge. A provocation. We're not here to be still. Bold campaigns, social.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The sun doesn't ripple. It breaks through.</strong></td>
+                                    <td>Positions apricity as opposite of small, forgettable impact. Manifesto, brand film.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Some warmth just passes. Ours hits.</strong></td>
+                                    <td>Ripple vs. wave energy without saying the words. Punchy. Social, ads.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fathom Lines -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Fathom Lines</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Line</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>We build what others don't fathom.</strong></td>
+                                    <td>Confident/edgy moments. Interviews, social, press.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We create at depths others don't reach.</strong></td>
+                                    <td>Bold positioning against the shallow. Tagline rotation, confident moments.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We fathom the moments that matter - then we build for them.</strong></td>
+                                    <td>Core philosophy statement. About page, investor deck.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We go where others won't - to fathom what people actually need.</strong></td>
+                                    <td>About page, thought leadership, interviews.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We build at the depth where meaning lives.</strong></td>
+                                    <td>Section header, pull quote, poetic moments.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We create for the ache, the joy, the in-between.</strong></td>
+                                    <td>Manifesto, brand film, poetic moments. Deeply human.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We fathom the cold - then we build the warmth.</strong></td>
+                                    <td>About page pull quote, brand video moment. Bridges fathom and apricity.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Most technology skims the surface. We fathom first - the loneliness, the longing, the moments slipping away - and then we build warmth for it.</strong></td>
+                                    <td>About page opener or closer, brand film VO. Full manifesto energy.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Addiction Lines -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Addiction Lines</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Line</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>We build addiction - to living fully.</strong></td>
+                                    <td>Punchline. Social, interviews, bold moments.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We're designing addiction. To presence. To connection. To living.</strong></td>
+                                    <td>Manifesto closer, brand video, about page. Builds momentum with three beats.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What We Don't Do -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">What Apricity Isn't</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Line</th>
+                                    <th>What It Says</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Cold efficiency disguised as innovation.</strong></td>
+                                    <td>Tech that works but feels nothing. Function without soul.</td>
+                                    <td>Manifesto, about page, positioning against competitors, investor deck.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Engagement tricks designed to steal your time.</strong></td>
+                                    <td>Dark patterns. Infinite scroll. Notifications that serve the app, not you.</td>
+                                    <td>Press interviews, social media, "why we're different" content. Polarizing in a good way.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Technology that makes you feel worse about your life.</strong></td>
+                                    <td>Comparison culture. Highlight reels. The scroll that leaves you emptier.</td>
+                                    <td>Manifesto, brand video. Strong emotional resonance.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Scale for scale's sake.</strong></td>
+                                    <td>Not chasing vanity metrics. Growth means nothing if the product is hollow.</td>
+                                    <td>Investor deck, internal culture, interviews. Signals intentionality.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Forgettable. Disposable. Scrollable.</strong></td>
+                                    <td>Three words that describe most apps. Not us.</td>
+                                    <td>Social media, graphic/poster, merchandise. Has rhythm.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Noise pretending to be signal.</strong></td>
+                                    <td>Content that feels important but isn't. Busywork disguised as productivity.</td>
+                                    <td>Manifesto, thought leadership, blog posts.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Apps that make you compare yourself to strangers.</strong></td>
+                                    <td>Anti-social media positioning. Direct hit at Instagram/TikTok culture.</td>
+                                    <td>Press, interviews, social. Specific and pointed.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Experiences you forget five minutes later.</strong></td>
+                                    <td>We build for lasting impact, not dopamine spikes.</td>
+                                    <td>About page, product descriptions. Pairs with "Cold fades. Warmth stays."</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Anything we wouldn't use ourselves.</strong></td>
+                                    <td>We are our own users. We believe in what we make.</td>
+                                    <td>Internal culture, hiring page, investor deck. Trust-builder.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Optimize for time-on-screen over time well-spent.</strong></td>
+                                    <td>We measure success differently. Your life matters more than our metrics.</td>
+                                    <td>Manifesto, press, differentiator against big tech.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Prioritize growth over meaning.</strong></td>
+                                    <td>We'd rather be meaningful than massive.</td>
+                                    <td>Investor deck, internal culture, interviews. Sets expectations.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Make something just because it's profitable.</strong></td>
+                                    <td>Money isn't the why. Impact is.</td>
+                                    <td>Investor deck, about page, manifesto. Attracts aligned customers/investors.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manifesto -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Manifesto</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <div class="manifesto">
+                            <p>There's a word from 1623 that almost no one uses anymore.</p>
+                            <p>Apricity. The warmth of the sun in winter.</p>
+                            <p>That moment when you're freezing - and then you feel it. Light breaking through. Heat where it shouldn't be. Warmth that finds you anyway.</p>
+                            <p>We build apps for that feeling.</p>
+                            <p>For the couple separated by oceans who light a candle at the same moment. For the pair stuck in routine who tear open an adventure and go. For the person who knows these years are short and wants to hold onto every sound, every quirk, every moment of this life they share.</p>
+                            <p>Cold fades. Warmth stays.</p>
+                            <p>And when warmth hits right, it doesn't ripple.</p>
+                            <p><strong>It makes waves.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Website Structure -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Website Structure</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Section</th>
+                                    <th>Content</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Hero</strong></td>
+                                    <td>Make waves. Not ripples.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>About page opener</strong></td>
+                                    <td>Ripples fade. Waves reshape. We build technology that moves people - apps that create moments worth remembering, connections worth keeping, lives worth living.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Brand video closing</strong></td>
+                                    <td>Ripples touch the surface. Waves move the ocean. [Logo] Make waves. Not ripples.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Direction -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Visual Direction</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <h3>Backgrounds</h3>
+                        <p>Dark and deep. No white. Think ocean at depth - the blues, the greens, the grays that shift depending on the light. The kind of color that feels like you're underwater looking up.</p>
+
+                        <h3>The Ocean Palette</h3>
+                        <p>The ocean isn't one color. It's:</p>
+                        <ul>
+                            <li>Deep navy</li>
+                            <li>Stormy gray-green</li>
+                            <li>Teal at the edges</li>
+                            <li>Slate blue</li>
+                            <li>Almost black in the depths</li>
+                        </ul>
+                        <p>All of these live in the palette. The ocean in all its moods.</p>
+
+                        <h3>The Sun</h3>
+                        <p>Warm gold breaking through. Not soft and pretty - <em>persistent</em>. The sun that finds you in the middle of the storm. Bright enough to cut through the dark. That moment of warmth when everything else is chaos.</p>
+
+                        <h3>The Feeling</h3>
+                        <p>Not a calm beach postcard. This is the sun shining through a storm. Hope in the middle of hard. Warmth that had to fight to reach you.</p>
+                        <p>That's apricity exactly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Palette -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Color Palette</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <h4>Primary Darks (backgrounds, depth)</h4>
+                        <div class="color-palette">
+                            <div class="color-swatch" style="background: #0a1628;">
+                                <div class="color-name">Deep Navy</div>
+                                <div class="color-code">#0a1628</div>
+                            </div>
+                            <div class="color-swatch" style="background: #0d1117;">
+                                <div class="color-name">Ocean Black</div>
+                                <div class="color-code">#0d1117</div>
+                            </div>
+                            <div class="color-swatch" style="background: #2c3e50;">
+                                <div class="color-name">Stormy Gray-Blue</div>
+                                <div class="color-code">#2c3e50</div>
+                            </div>
+                            <div class="color-swatch" style="background: #1a3a3a;">
+                                <div class="color-name">Dark Teal</div>
+                                <div class="color-code">#1a3a3a</div>
+                            </div>
+                        </div>
+
+                        <h4>Secondary Ocean Tones (accents, texture)</h4>
+                        <div class="color-palette">
+                            <div class="color-swatch" style="background: #4a6572;">
+                                <div class="color-name">Slate Blue</div>
+                                <div class="color-code">#4a6572</div>
+                            </div>
+                            <div class="color-swatch" style="background: #3d5a5a;">
+                                <div class="color-name">Gray-Green</div>
+                                <div class="color-code">#3d5a5a</div>
+                            </div>
+                            <div class="color-swatch" style="background: #1f5f5f;">
+                                <div class="color-name">Deep Teal</div>
+                                <div class="color-code">#1f5f5f</div>
+                            </div>
+                            <div class="color-swatch" style="background: #3b4f5c;">
+                                <div class="color-name">Storm Gray</div>
+                                <div class="color-code">#3b4f5c</div>
+                            </div>
+                        </div>
+
+                        <h4>Warmth (sun breaking through)</h4>
+                        <div class="color-palette">
+                            <div class="color-swatch" style="background: #d4a03c; color: #0a1628;">
+                                <div class="color-name">Warm Gold</div>
+                                <div class="color-code">#d4a03c</div>
+                            </div>
+                            <div class="color-swatch" style="background: #e8a628; color: #0a1628;">
+                                <div class="color-name">Amber</div>
+                                <div class="color-code">#e8a628</div>
+                            </div>
+                            <div class="color-swatch" style="background: #c9a227; color: #0a1628;">
+                                <div class="color-name">Soft Gold</div>
+                                <div class="color-code">#c9a227</div>
+                            </div>
+                            <div class="color-swatch" style="background: #f0d78c; color: #0a1628;">
+                                <div class="color-name">Breakthrough Gold</div>
+                                <div class="color-code">#f0d78c</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagery Style -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Imagery Style & Concepts</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <h3>Imagery Style</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Format</strong></td>
+                                    <td>Real photography and illustrated/artistic both have a place</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tone</strong></td>
+                                    <td>Warm and intimate AND bold and dramatic - room for both</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Apricity moments</strong></td>
+                                    <td>Intimate warmth</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wave moments</strong></td>
+                                    <td>Bold drama</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Core imagery</strong></td>
+                                    <td>Light, water, nature</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Imagery Concepts</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Storm light</strong></td>
+                                    <td>Sun breaking through storm clouds, light hitting dark water</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Underwater glow</strong></td>
+                                    <td>Looking up at light filtering through from below</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wave light</strong></td>
+                                    <td>Waves with light caught in them</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Golden streak</strong></td>
+                                    <td>Gold light streaking across a gray-blue sea</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Candle warmth</strong></td>
+                                    <td>Candle flame in a dark room (ties to Letter Room and brand - small warmth in darkness)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo Direction -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Logo Direction</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <h3>Concept: Wave with Inner Glow</h3>
+                        <p>A real wave - fluid, powerful, in motion - with a warm glow held inside it.</p>
+                        <p>Not abstract shapes suggesting movement. An actual wave. The kind you'd see cresting, curling, alive.</p>
+                        <p>But not a postcard wave. Not a surf logo. This is a stormy ocean wave. Deep. Dark. The kind that has weight.</p>
+                        <p>And inside it - caught in the curl, breaking through the water - light. Warmth. Gold cutting through the blue-green-gray.</p>
+
+                        <h3>The Image</h3>
+                        <p>A wave mid-curl. That moment right before it crashes. Inside the hollow of the curl, where it's normally dark and shadowed - that's where the light lives. Gold glowing from within. The sun found its way in.</p>
+                        <p>The wave is the force. The light is the warmth. Together, they're Apricity.</p>
+
+                        <h3>Execution Notes</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Element</th>
+                                    <th>Requirement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Scale</strong></td>
+                                    <td>Must read as a wave at small sizes (app icon, favicon)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Balance</strong></td>
+                                    <td>Glow visible but not overpowering the wave</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Palette</strong></td>
+                                    <td>Dark ocean colors with gold/amber warmth</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Style</strong></td>
+                                    <td>Fluid lines, not stiff or geometric</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Versatility</strong></td>
+                                    <td>Should work as single-color mark too</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Shape</strong></td>
+                                    <td>No circular frame - the wave IS the logo shape</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>What It Says</h3>
+                        <p>The warmth doesn't exist <em>despite</em> the wave. The wave <em>carries</em> the warmth. They're not separate. Apricity and force are one.</p>
+
+                        <h3>Image Generation Prompt</h3>
+                        <div class="prompt-box">
+"Logo design. A realistic ocean wave, mid-curl, powerful and dramatic. Side view showing the barrel forming as the wave crests. Not stylized. Not cartoonish. Not a spiral. A wave that looks like an actual ocean wave, simplified for logo use but maintaining realistic proportions and form.
+
+The wave is dark and stormy: deep navy, charcoal, slate, muted teal. Heavy. Moody. The kind of wave that has weight and force.
+
+Inside the barrel of the wave - the hollow tube where the wave curls over - golden light breaks through the water from behind. This is sunlight penetrating through the ocean, illuminating the thinner parts of the water from within. The effect should look like a photograph of a backlit wave, where the sun behind it makes the water glow gold and amber in the translucent areas.
+
+The light is not a separate element. It is the sun shining through the wave itself. Dark water on the thick parts, warm glow where the light penetrates through.
+
+Style: Sophisticated. Elegant. Painterly or photorealistic, not illustrated or flat. Minimal detail but realistic form. No hard outlines. Depth through color and light. Could hang in a gallery. Must scale to app icon size. No text. Symbol only. Dark charcoal or black background."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App Relationship -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">App Relationship</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Each app operates under the Apricity brand but carries its own identity and slogan. The studio name provides the warmth and philosophy. The individual apps deliver on that promise in their own voice.</p>
+                        <p>Apricity is the sun.</p>
+                        <p>The apps are the waves it creates.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App Applications -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">App Applications</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>App</th>
+                                    <th>Line 1</th>
+                                    <th>Line 2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Unscripted</strong></td>
+                                    <td>The warmth of an unplanned adventure.</td>
+                                    <td>Tear it open. Make your wave.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Letter Room</strong></td>
+                                    <td>Apricity across any distance.</td>
+                                    <td>A candle lit is a wave sent.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Heartprints</strong></td>
+                                    <td>The warmth they gave you, kept forever.</td>
+                                    <td>Their life was a wave. This is how it stays.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dog Show App</strong></td>
+                                    <td>Every ribbon. Every road trip. Every win.</td>
+                                    <td>Your wave, recorded.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Notes -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Future Notes</div>
+                    <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p><strong>When expanding beyond apps:</strong></p>
+                        <p>Replace "We build apps for that feeling" with one of these candidates:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Candidate Line</th>
+                                    <th>Energy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>We build what others don't fathom.</strong></td>
+                                    <td>Confident, edgy</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We create at depths others don't reach.</strong></td>
+                                    <td>Bold positioning</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We fathom the moments that matter - then we build for them.</strong></td>
+                                    <td>Core philosophy</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We go where others won't - to fathom what people actually need.</strong></td>
+                                    <td>Thought leadership</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We build at the depth where meaning lives.</strong></td>
+                                    <td>Poetic</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We create for the ache, the joy, the in-between.</strong></td>
+                                    <td>Deeply human</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>We fathom the cold - then we build the warmth.</strong></td>
+                                    <td>Bridges fathom and apricity</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Most technology skims the surface. We fathom first - the loneliness, the longing, the moments slipping away - and then we build warmth for it.</strong></td>
+                                    <td>Full manifesto energy</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>These lines are broader, deeper, and more human than "build apps." They leave room for physical products, services, content, and whatever comes next.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="version">
+            <p>Document Version 1.0</p>
+            <p>Apricity Brand Kit</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const accordionItem = this.parentElement;
+                const content = this.nextElementSibling;
+                
+                // Toggle active class
+                accordionItem.classList.toggle('active');
+                
+                // Adjust max-height for smooth animation
+                if (accordionItem.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
